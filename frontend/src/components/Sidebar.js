@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
+import UserCard from "./UserCard";
+
 const StyledSidebar = styled.aside`
   width: 22%;
   height: 100%;
@@ -11,7 +13,11 @@ const StyledSidebar = styled.aside`
 `;
 
 const Sidebar = ({ contextState }) => {
-  return <StyledSidebar>Sidebar</StyledSidebar>;
+  const userCards = contextState.users.map((user, id) => (
+    <UserCard key={user.id} {...user} />
+  ));
+
+  return <StyledSidebar>sidebar</StyledSidebar>;
 };
 
 export default Sidebar;
