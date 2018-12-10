@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { ContextConsumer } from "../Context";
 import Dashboard from "./Dashboard";
 import UserCard from "./UserCard";
+import CreateUserForm from "./CreateUserForm";
 
 const StyledUsers = styled.section`
   width: 100%;
@@ -23,7 +24,7 @@ class Users extends Component {
     return (
       <ContextConsumer>
         {values => {
-          const { state } = values;
+          const { state, addUser } = values;
 
           const userCards = state.users.map((user, i) => (
             <UserCard key={user.id} {...user} />
@@ -33,6 +34,7 @@ class Users extends Component {
             <Dashboard>
               <StyledUsers>
                 <div className="grid">{userCards}</div>
+                <CreateUserForm addUser={addUser} />
               </StyledUsers>
             </Dashboard>
           );

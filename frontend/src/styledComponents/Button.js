@@ -1,13 +1,11 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 
-const ButtonLink = styled(Link)`
+const Button = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
 
   padding: 0.8rem 2rem;
-  margin: 0 auto;
 
   background: #a06cd5;
 
@@ -22,4 +20,4 @@ const ButtonLink = styled(Link)`
   }
 `;
 
-export default ButtonLink;
+export default Button;
